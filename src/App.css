@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.5s ease, color 0.5s ease;
+  /* Fix overscroll background */
+  overscroll-behavior: none;
+}
+
+/* Fix overscroll background for html and body */
+html {
+  overscroll-behavior: none;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #0f172a);
+}
+
+/* Dark mode styles (default) */
+body.dark {
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #0f172a);
+  color: #ffffff;
+}
+
+/* Light mode styles */
+body:not(.dark) {
+  background: linear-gradient(135deg, #f8fafc, #e0e7ff, #f1f5f9);
+  color: #1e293b;
+}
+
+/* Fix overscroll for light mode */
+html:not(.dark) {
+  background: linear-gradient(135deg, #f8fafc, #e0e7ff, #f1f5f9);
+}
+
+.glassmorphism {
+  background: rgba(139, 92, 246, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glassmorphism-dark {
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Light mode glassmorphism */
+body:not(.dark) .glassmorphism {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 6px rgba(139, 92, 246, 0.1);
+}
+
+body:not(.dark) .glassmorphism-dark {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+}
+
+/* Light mode text colors */
+body:not(.dark) .text-white {
+  color: #1e293b !important;
+}
+
+body:not(.dark) .text-gray-300 {
+  color: #64748b !important;
+}
+
+body:not(.dark) .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* Keep gradient text same in both modes */
+.text-gradient {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Theme transition animations */
+.theme-transition {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced animations */
+@keyframes theme-switch {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+.theme-switching {
+  animation: theme-switch 0.6s ease-in-out;
+}
+
+@keyframes sun-to-moon {
+  0% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(0.8) rotate(180deg);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes moon-to-sun {
+  0% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(0.8) rotate(-180deg);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: scale(1) rotate(-360deg);
+    opacity: 1;
+  }
+}
+
+.sun-animation {
+  animation: sun-to-moon 0.6s ease-in-out;
+}
+
+.moon-animation {
+  animation: moon-to-sun 0.6s ease-in-out;
+}
+
+/* Purchase form animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Success animation */
+@keyframes success-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.success-bounce {
+  animation: success-bounce 1s ease-in-out;
+}
